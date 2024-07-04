@@ -33,10 +33,10 @@ public class Car
 {
     public IEngine? Engine {get; set; }
 
-    public void Drive()
+    public void Move()
     {
-        Engine.Start();
-        Console.WriteLine("Car is driving.");
+        Engine?.Start();
+        Console.WriteLine("Car is moving.");
     }
 }
 
@@ -47,6 +47,6 @@ class Program
       IEngine engine = new Engine();
       Car car = new Car();
       car.Engine = engine;
-      car.Drive();
+      car.Move();
     }
 }
